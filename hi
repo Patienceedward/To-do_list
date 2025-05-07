@@ -1,0 +1,26 @@
+let todos = [];
+
+window.onload = async () => {
+  // Load from localStorage
+
+  
+  const saved = localStorage.getItem('todos');
+  if (saved) {
+    todos = JSON.parse(saved);
+    console.log('Loaded from localStorage:', todos);
+  }
+
+  // Load from mock API
+  try {
+    const response = await fetch('http://localhost:3000/todos?_limit=10');
+    const apiTodos = await response.json();
+    console.log('Loaded from API:', apiTodos);
+
+    // Optional: merge with localStorage todos
+    todos = [...todos, ...apiTodos];
+  } catch (error) {
+    console.error('Error loading from API:', error);
+  }
+
+  // Now `todos` contains items from both sources
+};

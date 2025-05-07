@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
+  
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic To-Do List(Richfield)</title>
+
+  <!-- This is the link to my css file, where i tried to add as many cool features -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
+  
 <body>
-  Hello world
+  <!-- This is the heading of my page, i tried to make it look nice for a user -->
+  <h2>My Task Manager</h2>
+   <h2>Cause we need to get into that bag, helps you get the job done! </h2>
+  <div style="text-align: center;">
+
+    
+    <!-- If the user wants to input a new Task -->
+    <input type="text" id="newTodo" placeholder="Please add a new task..." />
+    <button onclick="addTodo()">Add</button>
+  </div>
+
+  <!-- THese are to see is a task is completed or not complteded -->
+  <div class="filters">
+    <button onclick="filterTodos('all')">All</button>
+  
+    <button onclick="filterTodos('completed')">Completed(Well Done)</button>
+    <button onclick="filterTodos('notCompleted')">Not Completed(You've still got time)</button>
+  </div>
+
+  <!-- I'm able to show the todo list  -->
+  <ul id="todoList"></ul>
+
+  <!-- Link to my javascript code with the more backend code -->
   <script src="script.js"></script>
 </body>
-
+  
 </html>
